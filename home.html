@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BurguerHouse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+ <header class="topo-app">
+  <div class="topo-conteudo">
+    <h1>🍔 BurguerHouse</h1>
+    <p>Peça agora seu lanche favorito!</p>
+  </div>
+</header>
+
+
+
+  <main class="cardapio">
+    <section>
+      <h2>🍔 Hambúrgueres</h2>
+
+      <div class="produto">
+        <img src="burguer/x-bacon.jpg" alt="Bacon Burguer">
+        <div class="info">
+          <h3>Bacon Burguer</h3>
+          <p>R$ 18,00</p>
+          <button onclick="adicionar('Bacon Burguer', 18)">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="produto">
+        <img src="burguer/x-burguer.jpg" alt="X-Burguer">
+        <div class="info">
+          <h3>X-Burguer</h3>
+          <p>R$ 18,00</p>
+          <button onclick="adicionar('X-Burguer', 18)">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="produto">
+        <img src="burguer/x-burguer.jpg" alt="Duplo Smash">
+        <div class="info">
+          <h3>Duplo Smash</h3>
+          <p>R$ 25,00</p>
+          <button onclick="adicionar('Duplo Smash', 25)">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="produto">
+        <img src="burguer/x-duplo.jpg" alt="X-Queijo">
+        <div class="info">
+          <h3>X-Queijo</h3>
+          <p>R$ 22,00</p>
+          <button onclick="adicionar('X-Queijo', 22)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🥤 Bebidas</h2>
+
+      <div class="produto">
+        <img src="burguer/refrigerante.jpg" alt="Refrigerante Lata">
+        <div class="info">
+          <h3>Refrigerante Lata</h3>
+          <p>R$ 6,00</p>
+          <button onclick="adicionar('Refrigerante Lata', 6)">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="produto">
+        <img src="burguer/sucos.jpg" alt="Suco Natural">
+        <div class="info">
+          <h3>Suco Natural</h3>
+          <p>R$ 8,00</p>
+          <button onclick="adicionar('Suco Natural', 8)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🍟 Acompanhamentos</h2>
+
+      <div class="produto">
+        <img src="burguer/batata frita.jpg" alt="Batata Frita">
+        <div class="info">
+          <h3>Batata Frita</h3>
+          <p>R$ 10,00</p>
+          <button onclick="adicionar('Batata Frita', 10)">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="produto">
+        <img src="burguer/aneis.jpg" alt="Anéis de Cebola">
+        <div class="info">
+          <h3>Anéis de Cebola</h3>
+          <p>R$ 12,00</p>
+          <button onclick="adicionar('Anéis de Cebola', 12)">Adicionar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ícone flutuante do carrinho -->
+<button id="botao-carrinho" class="botao-carrinho">
+  🛒 <span id="contador-carrinho" class="contador">0</span>
+</button>
+
+<!-- Painel do carrinho (inicialmente oculto) -->
+<aside id="painel-carrinho" class="carrinho oculto">
+  <h2>🛒 Seu Carrinho</h2>
+  <ul id="itens-carrinho"></ul>
+  <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+  <button onclick="finalizarPedido()">Finalizar Pedido</button>
+  <button onclick="fecharPainel()" class="fechar-painel">Fechar</button>
+</aside>
+
+  <div id="mensagem-adicionado" class="mensagem oculto">
+  ✅ Pedido adicionado ao carrinho!
+  <button onclick= "fecharmensagem()" class="fechar-msg">X</button>
+</div>
+
+
+  <div id="confirmacao" class="confirmacao oculto">
+    <p>✅ Pedido confirmado! Em breve será entregue 🍔</p>
+  </div>
+
+  <div id="tela-final" class="confirmacao oculto">
+  <h2>✅ Pedido confirmado!</h2>
+  <p id="resumo-nome"></p>
+  <ul id="resumo-itens"></ul>
+  <p><strong>Total: R$ <span id="resumo-total">0.00</span></strong></p>
+    <br>
+  <button onclick="mostrarHistorico()">🔍 Acompanhar Pedido</button>
+</div>
+</div>
+
+  <script src="java.js"></script>
+
+</body>
+</html>
